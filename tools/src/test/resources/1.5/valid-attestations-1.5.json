@@ -49,9 +49,9 @@
         {
           "bom-ref": "claim-1",
           "conformance": 0.8,
-          "subject": "product | component | organization | build-process | tool | ref",
+          "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
           "predicate": "Acme has a comprehensive vulnerability disclosure program",
-          "POAM-URL": "???",
+          "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???",
           "claims": [
             {
               "$comment": "subclaims go here - Derek M: why is this needed? Relationships could be a substitute?"
@@ -65,10 +65,19 @@
             "claim-1"
           ],
 
+          Artifact
+          Type=[observation, test-result, metric, sampling, anecdote, expert, ??? ] // make this an extensible type with predefined types and allow others to extend
+        Description=asdflkj
+        URL=http://asdfas
+        Date-of-creation
+        Author=
+        Reviewer=,
+        // this evidence covers a particular date range. Possibly an expiration of the evidence?
 
         }
       ],
       "confidence": {
+        "$comment": "this is very subjective - not overly useful - can easily be abused",
         "score": 1,
         "mitigationStrategy": ""
       },
