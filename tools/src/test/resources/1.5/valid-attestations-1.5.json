@@ -1,0 +1,80 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:3e671687-395b-41f5-a30f-a58921a69b79",
+  "version": 1,
+  "metadata": {
+    "manufacture": {
+      "name": "Acme, Inc.",
+      "url": [
+        "https://example.com"
+      ]
+    },
+    "component": {
+      "bom-ref": "acme-application-1.0",
+      "type": "application",
+      "name": "Acme Application",
+      "version": "1.0"
+    }
+  },
+  "attestations": [
+    {
+      "accessor": {
+        "type": "self | purchaser | independent - make this an extensible type with predefined types and allow others to extend - perhaps reuse some in-toto predicate types",
+        "organization": {
+          "name": "Accessors Inc",
+          "contact": [
+            {
+              "name": "Accessors Inc",
+              "email": "info@example.com"
+            }
+          ]
+        }
+      },
+      "requirement": {
+        "standard": "OMB-22-18",
+        "identifier": "1(c)iii",
+        "text": "The software producer must participate in a Vulnerability Disclosure Program",
+        "uri": "use opencre and others that do mapping",
+        "consistsOf": [
+          {
+            "$comment": "Any requirements from other standards that are included in the requirement defined.",
+            "standard": "BSIMM",
+            "identifier": "fff",
+            "text": ""
+          }
+        ]
+      },
+      "claims": [
+        {
+          "bom-ref": "claim-1",
+          "conformance": 0.8,
+          "subject": "product | component | organization | build-process | tool | ref",
+          "predicate": "Acme has a comprehensive vulnerability disclosure program",
+          "POAM-URL": "???",
+          "claims": [
+            {
+              "$comment": "subclaims go here - Derek M: why is this needed? Relationships could be a substitute?"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "refs": [
+            "claim-1"
+          ],
+
+
+        }
+      ],
+      "confidence": {
+        "score": 1,
+        "mitigationStrategy": ""
+      },
+      "reasoning": [
+        "Why do these subclaims satisfy the claim"
+      ]
+    }
+  ]
+}
