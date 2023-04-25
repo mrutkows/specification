@@ -17,6 +17,83 @@
       "version": "1.0"
     }
   },
+  "declarations": {
+    "requirements": [
+      {
+        "bom-ref": "requirement-1",
+        "standard": "OMB-22-18",
+        "identifier": "1(c)iii",
+        "text": "The software producer must participate in a Vulnerability Disclosure Program",
+        "uri": "use opencre and others that do mapping",
+        "claims": [
+          "claim-1"
+        ]
+      }
+    ],
+    "attestations": [
+      {
+        "accessor": {
+          "type": "self | purchaser | independent - make this an extensible type with predefined types and allow others to extend - perhaps reuse some in-toto predicate types",
+          "organization": {
+            "name": "Accessors Inc",
+            "contact": [
+              {
+                "name": "Accessors Inc",
+                "email": "info@example.com"
+              }
+            ]
+          }
+        },
+        "map": [
+          {
+            "requirement": "requirement-1",
+            "claims": [
+              {
+                "claim": "claim-1",
+                "evidence": [ "evidence-1" ]
+              }
+            ]
+          }
+        ],
+        "confidence": {
+          "$comment": "this is very subjective - not overly useful - can easily be abused",
+          "score": 1,
+          "mitigationStrategy": "",
+          "notes": "Why do these claims satisfy the requirement"
+        },
+        "signature": {}
+      }
+    ],
+    "claims": [
+      {
+        "bom-ref": "claim-1",
+        "conformance": 0.8,
+        "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
+        "predicate": "Acme has a comprehensive vulnerability disclosure program",
+        "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???",
+        "claims": [
+          {
+            "$comment": "subclaims go here - Derek M: why is this needed? Relationships could be a substitute? - possibly use parent/child rather than testing"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "bom-ref": "evidence-1",
+        "artifact": {},
+        "type": "observation | test-result | metric | sampling | anecdote, expert // make this an extensible type with predefined types and allow others to extend",
+        "description": "",
+        "url": "",
+        "created": "2023-04-25T00:00:00+00:00",
+        "expires": "2023-05-25T00:00:00+00:00",
+        "author": {},
+        "reviewer": {}
+      }
+    ]
+  },
+
+
   "attestations": [
     {
       "accessor": {
@@ -83,7 +160,8 @@
       },
       "reasoning": [
         "Why do these subclaims satisfy the claim"
-      ]
+      ],
+      "signature": {}
     }
   ]
 }
