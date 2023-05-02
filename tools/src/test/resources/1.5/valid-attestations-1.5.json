@@ -18,16 +18,23 @@
     }
   },
   "declarations": {
+    "standards": [
+      {
+        "bom-ref": "omb-22-18",
+        "name": "OMB-22-18",
+        "source": "OMB",
+        "url": ""
+      }
+    ],
     "requirements": [
       {
         "bom-ref": "requirement-1",
-        "standard": "OMB-22-18",
+        "standard-ref": "omb-22-18",
         "identifier": "1(c)iii",
         "text": "The software producer must participate in a Vulnerability Disclosure Program",
-        "uri": "use opencre and others that do mapping",
-        "claims": [
-          "claim-1"
-        ]
+        "url": "",
+        "opencre": "use opencre and others that do mapping",
+        "parent": ""
       }
     ],
     "attestations": [
