@@ -20,21 +20,34 @@
   "declarations": {
     "standards": [
       {
+        "$comment": "Ensure docs for 'standard' make it clear that this could be industry, regulatory, policy, etc",
         "bom-ref": "omb-22-18",
         "name": "OMB-22-18",
-        "source": "OMB",
-        "url": ""
-      }
-    ],
-    "requirements": [
-      {
-        "bom-ref": "requirement-1",
-        "standard-ref": "omb-22-18",
-        "identifier": "1(c)iii",
-        "text": "The software producer must participate in a Vulnerability Disclosure Program",
-        "url": "",
-        "opencre": "use opencre and others that do mapping",
-        "parent": ""
+        "description": "",
+        "version": "",
+        "owner": "Office of Management and Budget (OMB)",
+        "requirements": [
+          {
+            "bom-ref": "requirement-1",
+            "identifier": "1(c)iii",
+            "text": "The software producer must participate in a Vulnerability Disclosure Program",
+            "opencre": "use opencre and others that do mapping",
+            "parent": "",
+            "externalReferences:": []
+          }
+        ],
+        "levels": [
+          {
+            "bom-ref": "level-1",
+            "identifier": "Level 1",
+            "description": "",
+            "requirements": [
+              "requirement-1"
+            ]
+          }
+        ],
+        "externalReferences:": [],
+        "signature": {}
       }
     ],
     "attestations": [
@@ -57,118 +70,41 @@
             "claims": [
               {
                 "claim": "claim-1",
-                "evidence": [ "evidence-1" ]
+                "evidence": [ "evidence-1" ],
+                "conformance": 0.8,
+                "confidence": {
+                  "$comment": "this is very subjective - not overly useful - can easily be abused",
+                  "score": 1,
+                  "mitigationStrategy": "",
+                  "notes": "Why do these claims satisfy the requirement"
+                }
               }
             ]
           }
         ],
-        "confidence": {
-          "$comment": "this is very subjective - not overly useful - can easily be abused",
-          "score": 1,
-          "mitigationStrategy": "",
-          "notes": "Why do these claims satisfy the requirement"
-        },
         "signature": {}
       }
     ],
     "claims": [
       {
         "bom-ref": "claim-1",
-        "conformance": 0.8,
         "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
         "predicate": "Acme has a comprehensive vulnerability disclosure program",
-        "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???",
-        "claims": [
-          {
-            "$comment": "subclaims go here - Derek M: why is this needed? Relationships could be a substitute? - possibly use parent/child rather than testing"
-          }
-        ]
+        "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???", // delete me - add as external ref
+        "externalReferences:": []
       }
     ],
     "evidence": [
       {
         "bom-ref": "evidence-1",
-        "artifact": {},
-        "type": "observation | test-result | metric | sampling | anecdote, expert // make this an extensible type with predefined types and allow others to extend",
+        "type": "observation | test-result | metric | sampling | anecdote | mitigation | expert // make this an extensible type with predefined types and allow others to extend",
         "description": "",
-        "url": "",
+        "data": {}, // this is the artifact
         "created": "2023-04-25T00:00:00+00:00",
         "expires": "2023-05-25T00:00:00+00:00",
         "author": {},
         "reviewer": {}
       }
     ]
-  },
-
-
-  "attestations": [
-    {
-      "accessor": {
-        "type": "self | purchaser | independent - make this an extensible type with predefined types and allow others to extend - perhaps reuse some in-toto predicate types",
-        "organization": {
-          "name": "Accessors Inc",
-          "contact": [
-            {
-              "name": "Accessors Inc",
-              "email": "info@example.com"
-            }
-          ]
-        }
-      },
-      "requirement": {
-        "standard": "OMB-22-18",
-        "identifier": "1(c)iii",
-        "text": "The software producer must participate in a Vulnerability Disclosure Program",
-        "uri": "use opencre and others that do mapping",
-        "consistsOf": [
-          {
-            "$comment": "Any requirements from other standards that are included in the requirement defined.",
-            "standard": "BSIMM",
-            "identifier": "fff",
-            "text": ""
-          }
-        ]
-      },
-      "claims": [
-        {
-          "bom-ref": "claim-1",
-          "conformance": 0.8,
-          "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
-          "predicate": "Acme has a comprehensive vulnerability disclosure program",
-          "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???",
-          "claims": [
-            {
-              "$comment": "subclaims go here - Derek M: why is this needed? Relationships could be a substitute?"
-            }
-          ]
-        }
-      ],
-      "evidence": [
-        {
-          "refs": [
-            "claim-1"
-          ],
-
-          Artifact
-          Type=[observation, test-result, metric, sampling, anecdote, expert, ??? ] // make this an extensible type with predefined types and allow others to extend
-        Description=asdflkj
-        URL=http://asdfas
-        Date-of-creation
-        Author=
-        Reviewer=,
-        // this evidence covers a particular date range. Possibly an expiration of the evidence?
-
-        }
-      ],
-      "confidence": {
-        "$comment": "this is very subjective - not overly useful - can easily be abused",
-        "score": 1,
-        "mitigationStrategy": ""
-      },
-      "reasoning": [
-        "Why do these subclaims satisfy the claim"
-      ],
-      "signature": {}
-    }
-  ]
+  }
 }
