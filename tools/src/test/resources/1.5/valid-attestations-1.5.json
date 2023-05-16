@@ -67,19 +67,14 @@
         "map": [
           {
             "requirement": "requirement-1",
-            "claims": [
-              {
-                "claim": "claim-1",
-                "evidence": [ "evidence-1" ],
-                "conformance": 0.8,
-                "confidence": {
-                  "$comment": "this is very subjective - not overly useful - can easily be abused",
-                  "score": 1,
-                  "mitigationStrategy": "",
-                  "notes": "Why do these claims satisfy the requirement"
-                }
-              }
-            ]
+            "claims": [ "claim-1" ],
+            "counterClaims": [ "claims-2" ],
+            "conformance": 0.8,
+            "mitigationStrategy": [ "evidence-of-mitigations-1" ],
+            "confidence": {
+              "score": 1,
+              "rationale": "Why do these claims satisfy the requirement"
+            }
           }
         ],
         "signature": {}
@@ -90,8 +85,13 @@
         "bom-ref": "claim-1",
         "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
         "predicate": "Acme has a comprehensive vulnerability disclosure program",
+        "mitigationStrategy": [ "evidence-of-mitigations-1" ],
+        "reasoning": "Why does the evidence meet the claim...",
+        "evidence": [ "evidence-1" ],
+        "counterEvidence": [ "evidence-4" ],
         "POAM-URL": "https://www.agileit.com/news/what-is-a-poam/ ???", // delete me - add as external ref
-        "externalReferences:": []
+        "externalReferences:": [],
+        "signature": {}
       }
     ],
     "evidence": [
@@ -103,7 +103,8 @@
         "created": "2023-04-25T00:00:00+00:00",
         "expires": "2023-05-25T00:00:00+00:00",
         "author": {},
-        "reviewer": {}
+        "reviewer": {},
+        "signature": {}
       }
     ]
   }
