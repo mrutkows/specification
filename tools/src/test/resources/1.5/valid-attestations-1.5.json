@@ -50,20 +50,25 @@
         "signature": {}
       }
     ],
+    "assessors": [
+      {
+        "bom-ref": "assessor-1",
+        "type": "self | purchaser | independent - make this an extensible type with predefined types and allow others to extend - perhaps reuse some in-toto predicate types",
+        "organization": {
+          "name": "Assessors Inc",
+          "contact": [
+            {
+              "name": "Assessors Inc",
+              "email": "info@example.com"
+            }
+          ]
+        }
+      }
+    ],
     "attestations": [
       {
-        "accessor": {
-          "type": "self | purchaser | independent - make this an extensible type with predefined types and allow others to extend - perhaps reuse some in-toto predicate types",
-          "organization": {
-            "name": "Accessors Inc",
-            "contact": [
-              {
-                "name": "Accessors Inc",
-                "email": "info@example.com"
-              }
-            ]
-          }
-        },
+        "targets": [ "target-1" ],
+        "assessor": "assessor-1",
         "map": [
           {
             "requirement": "requirement-1",
@@ -83,7 +88,7 @@
     "claims": [
       {
         "bom-ref": "claim-1",
-        "subject": "product | component | organization | build-process | tool | ref", // make this an extensible type with predefined types and allow others to extend
+        "target": "target-1",
         "predicate": "Acme has a comprehensive vulnerability disclosure program",
         "mitigationStrategy": [ "evidence-of-mitigations-1" ],
         "reasoning": "Why does the evidence meet the claim...",
@@ -106,6 +111,21 @@
         "reviewer": {},
         "signature": {}
       }
-    ]
+    ],
+    "targets": {
+      "organizations": [
+
+      ],
+      "contacts": [
+
+      ],
+      "components": [
+
+      ],
+      "services": [
+
+      ]
+    }
+
   }
 }
