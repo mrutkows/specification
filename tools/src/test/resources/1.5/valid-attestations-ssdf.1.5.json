@@ -1,0 +1,187 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:3e671687-395b-41f5-a30f-a58921a69b79",
+  "version": 1,
+  "metadata": {
+    "manufacture": {
+      "name": "Acme, Inc.",
+      "url": [
+        "https://example.com"
+      ]
+    },
+    "component": {
+      "bom-ref": "acme-application-1.0",
+      "type": "application",
+      "name": "Acme Application",
+      "version": "1.0"
+    }
+  },
+  "declarations": {
+    "standards": [
+      {
+        "$comment": "Ensure docs for 'standard' make it clear that this could be industry, regulatory, policy, etc",
+        "bom-ref": "ssdf1.1",
+        "name": "Secure Software Development Framework (SSDF) Version 1.1",
+        "description": "NIST Special Publication 800-218",
+        "version": "1.1",
+        "owner": "National Institute of Standards and Technology",
+        "requirements": [
+          {
+            "bom-ref": "ssdf1.1-po",
+            "identifier": "PO",
+            "text": "Prepare the Organization (PO): Organizations should ensure that their people,\nprocesses, and technology are prepared to perform secure software development at the\norganization level. Many organizations will find some PO practices to also be applicable\nto subsets of their software development, like individual development groups or projects",
+            "opencre": null,
+            "parent": "",
+            "externalReferences:": []
+          },
+          {
+            "bom-ref": "ssdf1.1-po.1",
+            "identifier": "PO.1",
+            "text": "Define Security Requirements for Software\nDevelopment (PO.1): Ensure that security\nrequirements for software development are\nknown at all times so that they can be taken into\naccount throughout the SDLC and duplication of\neffort can be minimized because the\nrequirements information can be collected once\nand shared. This includes requirements from\ninternal sources (e.g., the organization’s policies,\nbusiness objectives, and risk management strategy) and external sources (e.g., applicable\nlaws and regulations).",
+            "opencre": null,
+            "parent": "ssdf1.1-po",
+            "externalReferences:": []
+          },
+          {
+            "bom-ref": "ssdf1.1-po.1.1",
+            "identifier": "PO.1.1",
+            "text": "Identify and document all security\nrequirements for the organization’s software\ndevelopment infrastructures and processes, and\nmaintain the requirements over time.",
+            "opencre": null,
+            "parent": "ssdf1.1-po.1",
+            "externalReferences:": []
+          }
+        ],
+        "externalReferences:": [
+          {
+            "type": "documentation",
+            "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+            "comment": "NIST SP 800-218"
+          }
+        ],
+        "signature": {}
+      }
+    ],
+    "assessors": [
+      {
+        "bom-ref": "assessor-1",
+        "type": "self",
+        "organization": {
+          "name": "Acme Inc"
+        }
+      }
+    ],
+    "attestations": [
+      {
+        "targets": [ "acme-inc" ],
+        "assessor": "assessor-1",
+        "map": [
+          {
+            "requirement": "ssdf1.1-po.1.1",
+            "claims": [ "claim-acme-po1.1" ],
+            "counterClaims": [ "claim-acme-po1.1-counter" ],
+            "conformance": 0.5,
+            "mitigationStrategy": [ "evidence-acme-ssdl-mitigations-1" ],
+            "confidence": {
+              "score": 1,
+              "rationale": "Independently verified by xxx."
+            }
+          }
+        ],
+        "signature": {}
+      }
+    ],
+    "claims": [
+      {
+        "bom-ref": "claim-acme-po1.1",
+        "target": "acme-inc",
+        "predicate": "Acme documents all security requirements in their ALM and maintains requirements over time",
+        "mitigationStrategy": [ "evidence-acme-ssdl-mitigations-1" ],
+        "reasoning": "Why does the evidence meet the claim...",
+        "evidence": [ "acme-evidence-ssdl-1" ],
+        "counterEvidence": [ "evidence-acme-ssdl-gapanalysis-1" ],
+        "externalReferences:": [],
+        "signature": {}
+      },
+      {
+        "bom-ref": "claim-acme-po1.1-counter",
+        "target": "acme-inc",
+        "predicate": "Acme only does the SSDL for 50% of their projects",
+        "mitigationStrategy": [  ],
+        "reasoning": "Why does the evidence meet the claim...",
+        "evidence": [ "evidence-acme-ssdl-audit-1" ],
+        "counterEvidence": [ ],
+        "externalReferences:": [],
+        "signature": {}
+      }
+    ],
+    "evidence": [
+      {
+        "bom-ref": "evidence-acme-ssdl-1",
+        "type": "document????",
+        "description": "Details the SSDL processes used at Acme Inc",
+        "data": {}, // this is the artifact
+        "created": "2023-04-25T00:00:00+00:00",
+        "expires": "2023-05-25T00:00:00+00:00",
+        "author": {},
+        "reviewer": {},
+        "signature": {}
+      },
+      {
+        "bom-ref": "evidence-acme-ssdl-gapanalysis-1",
+        "type": "cdx:attestation:evidence:type:gapanalysis??????",
+        "description": "External audit revealed that only 80% of projects follow the SSDL",
+        "data": {}, // this is the artifact
+        "created": "2023-04-25T00:00:00+00:00",
+        "expires": "2023-05-25T00:00:00+00:00",
+        "author": {},
+        "reviewer": {},
+        "signature": {}
+      },
+      {
+        "bom-ref": "evidence-acme-ssdl-audit-1",
+        "type": "cdx:attestation:evidence:type:audit??????",
+        "description": "External audit revealed that only 50% of projects follow the SSDL",
+        "data": {}, // this is the artifact
+        "created": "2023-04-25T00:00:00+00:00",
+        "expires": "2023-05-25T00:00:00+00:00",
+        "author": {},
+        "reviewer": {},
+        "signature": {}
+      },
+      {
+        "bom-ref": "evidence-of-mitigations-1",
+        "type": "mitigation",
+        "description": "Detail plans for rolling out SSDL across all teams and the timelines for when it will be achieved",
+        "data": {}, // this is the artifact
+        "created": "2023-04-25T00:00:00+00:00",
+        "expires": "2023-05-25T00:00:00+00:00",
+        "author": {},
+        "reviewer": {},
+        "signature": {}
+      }
+    ],
+    "targets": {
+      "organizations": [
+        {
+          "bom-ref": "acme-inc",
+          "name": "Acme Inc"
+        }
+      ],
+      "contacts": [
+
+      ],
+      "components": [
+        {
+          "bom-ref": "acme-slingshot",
+          "name": "Slingshot",
+          "version": "1.0"
+        }
+      ],
+      "services": [
+
+      ]
+    }
+
+  }
+}

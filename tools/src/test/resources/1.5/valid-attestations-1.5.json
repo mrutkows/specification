@@ -102,7 +102,7 @@
     "evidence": [
       {
         "bom-ref": "evidence-1",
-        "type": "observation | test-result | metric | sampling | anecdote | mitigation | expert // make this an extensible type with predefined types and allow others to extend",
+        "type": "audit | observation | test-result | metric | sampling | anecdote | mitigation | expert // make this an extensible type with predefined types and allow others to extend",
         "description": "",
         "data": {}, // this is the artifact
         "created": "2023-04-25T00:00:00+00:00",
