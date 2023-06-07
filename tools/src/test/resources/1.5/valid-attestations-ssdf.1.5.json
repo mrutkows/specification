@@ -181,7 +181,19 @@
       "services": [
 
       ]
-    }
+    },
+    "affirmation": {
+      "text": "I certify, to the best of my knowledge, that all information is correct...",
+      "delegation": {
 
-  }
+      },
+      "signature": "",
+      OR
+      "externalReference": {
+
+      }
+    }
+     // support both - external reference of type signature (integrity) or signatory (legal)
+  },
+  "signature": ""
 }
