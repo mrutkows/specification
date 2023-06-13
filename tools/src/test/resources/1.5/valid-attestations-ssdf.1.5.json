@@ -184,16 +184,20 @@
     },
     "affirmation": {
       "text": "I certify, to the best of my knowledge, that all information is correct...",
-      "delegation": {
+      "signatories": [
+        {
+          "name": "",
+          "role": "",
+          "signature": "",
+          OR
+          "externalReference": {
 
-      },
-      "signature": "",
-      OR
-      "externalReference": {
-
-      }
-    }
-     // support both - external reference of type signature (integrity) or signatory (legal)
+          }
+        }
+      ],
+      "signature": ""
+    },
+    "signature": ""
   },
   "signature": ""
 }
